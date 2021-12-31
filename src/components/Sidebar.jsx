@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
 import logo from "../assets/logo.png";
 import { categories } from "../utils/data";
@@ -25,9 +25,9 @@ const Sidebar = ({ closeToggle }) => {
         </div>
         <div className='flex flex-col gap-5'>
           <NavLink
-          to="/"
+            to='/'
             onClick={handelCloseSidebar}
-            className={({isActive}) =>
+            className={({ isActive }) =>
               isActive ? isActiveStyle : isNotActiveStyle
             }>
             <RiHomeFill />
@@ -38,20 +38,34 @@ const Sidebar = ({ closeToggle }) => {
           </h3>
           {categories.slice(0, categories.length - 1).map((category) => (
             <NavLink
-            key={category.name}
-              to={`/category/${category.name.replaceAll(" ","_")}`}
+              key={category.name}
+              to={`/category/${category.name.replaceAll(" ", "_")}`}
               onClick={handelCloseSidebar}
-              className={({isActive}) =>
+              className={({ isActive }) =>
                 isActive ? isActiveStyle : isNotActiveStyle
               }>
-                <img src={category.image} alt="category image" className=" w-10 h-10 rounded-full shadow-sm object-cover"/>
+              <img
+                src={category.image}
+                alt='category image'
+                className=' w-10 h-10 rounded-full shadow-sm object-cover'
+              />
               {category.name}
             </NavLink>
           ))}
         </div>
       </div>
 
-  
+      <Link
+        to={`/`}
+        onClick={handelCloseSidebar}
+        className='flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3'>
+        <img
+          src='https://th.bing.com/th/id/R.0cfe3cb86925753834d56c792931315c?rik=GA0RqPxgQyA0KA&pid=ImgRaw&r=0'
+          alt='user'
+          className='w-10 h-10 rounded-full'
+        />
+        <p>userName</p>
+      </Link>
     </div>
   );
 };
