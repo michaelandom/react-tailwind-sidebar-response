@@ -1,6 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
-import logo from "../assets/logo.png";
 import { categories } from "../utils/data";
 
 const isNotActiveStyle =
@@ -21,7 +20,7 @@ const Sidebar = ({ closeToggle }) => {
         <div
           className='flex px-5 gap-2 my-6 w-190 items-center'
           onClick={() => handelCloseSidebar}>
-          <img src={logo} alt='logo' className='w-full' />
+            <span className="w-full text-2xl font-serif">Logo</span>
         </div>
         <div className='flex flex-col gap-5'>
           <NavLink

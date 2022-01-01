@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { HiMenu } from "react-icons/hi";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Sidebar } from "../components";
-import logo from "../assets/logo.png";
 import { useParams } from "react-router-dom";
 
 const Home = () => {
@@ -30,7 +29,9 @@ const Home = () => {
             className='cursor-pointer '
             onClick={() => setToggleSidebar(true)}
           />
-          <img src={logo} alt='logo' className='w-28' />
+            <span className="w-28 text-2xl font-serif">Logo</span>
+
+         
           <img
             src='https://th.bing.com/th/id/R.0cfe3cb86925753834d56c792931315c?rik=GA0RqPxgQyA0KA&pid=ImgRaw&r=0'
             alt='logo'
